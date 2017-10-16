@@ -1,0 +1,23 @@
+# For more information about the properties used in
+# this file, please see the EditorConfig documentation:
+# http://editorconfig.org/
+
+# IntelliJ: out of the box support
+# https://www.jetbrains.com/idea/help/configuring-code-style.html#editorconfig
+# Eclipse: install from Marketplace
+# https://marketplace.eclipse.org/content/editorconfig-eclipse
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.xml]
+indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false

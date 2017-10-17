@@ -1,0 +1,7 @@
+@Library('jenkins-library') _
+
+node() {
+    stage('basic maven') {
+        mvn()
+    }
+}

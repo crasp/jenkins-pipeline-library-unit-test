@@ -1,8 +1,9 @@
-def call(Map parameters = [:]) {
+def call(parameters = [:]) {
     String goals = parameters.containsKey('goals') ? parameters.goals : 'clean install'
-    String options = parameters.containsKey('options') ? parameters.options : ''
+    String options = parameters.containsKey('mavenOpts') ? parameters.mavenOpts : ''
+    String properties = parameters.containsKey('properties') ? parameters.properties : ''
 
-    options += ' --update-snapshots --batch-mode'
+    options += "${options.isEmpty() ? '' : ' '}--update-snapshots --batch-mode"
 
-    sh "mvn ${goals} ${options}"
+    sh "mvn ${goals} ${options}${properties.isEmpty() ? '' : " ${properties}"}"
 }

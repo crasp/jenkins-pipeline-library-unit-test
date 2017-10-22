@@ -193,7 +193,7 @@
                                 <goal>copy-resources</goal>
                             </goals>
                             <configuration>
-                                <outputDirectory>${basedir}/target/jenkins-library@master/vars</outputDirectory>
+                                <outputDirectory>${basedir}/target/library-under-test@master/vars</outputDirectory>
                                 <resources>
                                     <resource>
                                         <directory>vars</directory>

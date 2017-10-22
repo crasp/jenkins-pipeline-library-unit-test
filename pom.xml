@@ -45,7 +45,6 @@
                 <groupId>com.lesfurets</groupId>
                 <artifactId>jenkins-pipeline-unit</artifactId>
                 <version>${lib.version.jenkins-pipeline-unit}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -65,7 +64,6 @@
         <dependency>
             <groupId>com.lesfurets</groupId>
             <artifactId>jenkins-pipeline-unit</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -263,6 +261,7 @@
                         <goals>
                             <goal>addSources</goal>
                             <goal>addTestSources</goal>
+                            <goal>compile</goal>
                             <goal>compileTests</goal>
                         </goals>
                     </execution>

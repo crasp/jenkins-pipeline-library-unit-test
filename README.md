@@ -25,7 +25,17 @@ pipeline {
 ```
 
 ## Tests
--- TODO --
+
+In order to be able to test what goes into this library, we make use of 
+[JenkinsPipelineUnit](https://github.com/jenkinsci/JenkinsPipelineUnit) to test our changes.
+This framework is designed to test pipeline definitions and external loaded pipeline libraries.
+To get it to work with this project we do a little trick:
+- Replace the default compiler with the gmavenplus compiler to properly handle groovy sources
+- During the maven `validate` phase, copy the `${basedir}/vars` directory 
+to `${basedir}/target/library-under-test@master/vars`
+- Configure all unit tests to have those variables registered as `localSource`
+- After running `mvn clean compile` all global variables are up-to-date for testing
+
 
 ## Useful links for developers
 

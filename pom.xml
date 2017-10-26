@@ -21,7 +21,7 @@
 
     <properties>
         <java.version>1.8.0</java.version>
-        <lib.version.groovy-all>2.4.6</lib.version.groovy-all>
+        <lib.version.groovy-all>2.4.11</lib.version.groovy-all>
         <lib.version.jenkins-pipeline-unit>1.1</lib.version.jenkins-pipeline-unit>
         <lib.version.junit>4.12</lib.version.junit>
         <plg.version.gmavenplus-plugin>1.6</plg.version.gmavenplus-plugin>
@@ -45,6 +45,7 @@
                 <groupId>com.lesfurets</groupId>
                 <artifactId>jenkins-pipeline-unit</artifactId>
                 <version>${lib.version.jenkins-pipeline-unit}</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -64,6 +65,7 @@
         <dependency>
             <groupId>com.lesfurets</groupId>
             <artifactId>jenkins-pipeline-unit</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -110,11 +112,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>${plg.version.maven-clean-plugin}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${plg.version.maven-compiler-plugin}</version>
                 </plugin>
                 <!-- Disable default compiler, we compile with gmavenplus -->
                 <plugin>
@@ -261,7 +258,6 @@
                         <goals>
                             <goal>addSources</goal>
                             <goal>addTestSources</goal>
-                            <goal>compile</goal>
                             <goal>compileTests</goal>
                         </goals>
                     </execution>
